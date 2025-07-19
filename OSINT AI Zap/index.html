@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>OSINT AI Zap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Motore di ricerca OSINT con agente AI, filtri avanzati, esportazione, bookmarking e tanto altro!">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">OSINT <span>AI</span> Zap</div>
+    <nav>
+      <button id="toggle-darkmode" aria-label="Toggle dark mode" title="Dark mode">🌙</button>
+      <button id="github-login-btn" aria-label="Login GitHub" title="Login GitHub">Login GitHub</button>
+      <button id="bookmark-btn" aria-label="Bookmarks" title="Visualizza bookmarks">🔖</button>
+    </nav>
+  </header>
+  <main>
+    <!-- AI Assistant -->
+    <section id="ai-agent">
+      <div id="ai-chatbox"></div>
+      <form id="ai-query-form">
+        <input type="text" id="ai-query" placeholder="Chiedi all'agente AI..." autocomplete="off">
+        <button type="submit">Invia</button>
+      </form>
+    </section>
+    <!-- OSINT Search -->
+    <section id="search-section">
+      <form id="search-form">
+        <input type="text" id="search-query" placeholder="Cerca dati OSINT..." required>
+        <select id="search-filter">
+          <option value="">Tutti</option>
+          <option value="social">Social</option>
+          <option value="domain">Domini</option>
+          <option value="email">Email</option>
+          <option value="ip">IP</option>
+        </select>
+        <button type="submit">Cerca</button>
+      </form>
+      <div id="search-options">
+        <button id="export-csv">Esporta CSV</button>
+        <button id="export-pdf">Esporta PDF</button>
+      </div>
+    </section>
+    <!-- Results Table -->
+    <section id="results-section">
+      <div id="results-header">
+        <span id="results-count"></span>
+        <label><input type="checkbox" id="toggle-bookmark-view"> Mostra solo bookmark</label>
+      </div>
+      <table id="results-table">
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Valore</th>
+            <th>Fonte</th>
+            <th>Azioni</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </section>
+    <!-- Details Modal/Section -->
+    <section id="details-section" hidden></section>
+  </main>
+  <footer>
+    <p>© 2025 OSINT AI Zap - Powered by GitHub Pages & AI API</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

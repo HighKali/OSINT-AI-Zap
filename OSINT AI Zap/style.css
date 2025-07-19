@@ -1,0 +1,63 @@
+:root {
+  --primary: #0074d9;
+  --background: #f9f9f9;
+  --text: #222;
+  --header: #222;
+  --card: #fff;
+  --accent: #ffdc00;
+  --border: #e0e0e0;
+  --shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+[data-theme="dark"] {
+  --primary: #00bfff;
+  --background: #191c21;
+  --text: #e8e8e8;
+  --header: #111117;
+  --card: #22232b;
+  --accent: #ffc107;
+  --border: #353941;
+}
+body {
+  margin: 0; background: var(--background); color: var(--text); font-family: 'Roboto', Arial, sans-serif;
+  transition: background .3s, color .3s;
+}
+header {
+  background: var(--header); color: var(--accent); padding: 1em 2em; display: flex; align-items: center; justify-content: space-between;
+}
+.logo { font-size: 1.5em; font-weight: bold; letter-spacing: 1px; }
+.logo span { color: var(--primary); }
+nav button { background: none; border: none; color: var(--accent); margin-left: 1em; font-size: 1.2em; cursor: pointer; }
+main { max-width: 900px; margin: 2em auto; background: var(--card); border-radius: 12px; box-shadow: var(--shadow); padding: 2em; }
+#ai-agent { background: var(--background); padding: 1em; border-radius: 8px; margin-bottom: 2em; }
+#ai-chatbox { min-height: 60px; margin-bottom: 0.5em; }
+form { display: flex; gap: 0.5em; }
+input, select, button { font-size: 1em; padding: 0.5em; border-radius: 6px; border: 1px solid var(--border); }
+button[type="submit"], #export-csv, #export-pdf { background: var(--primary); color: #fff; border: none; cursor: pointer; }
+#search-options { margin-top: 0.8em; }
+#results-section { margin-top: 2em; }
+#results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5em; }
+#results-table { width: 100%; border-collapse: collapse; background: var(--card); }
+#results-table th, #results-table td { padding: 0.65em; border-bottom: 1px solid var(--border); }
+#results-table th { background: var(--background); }
+#results-table tr:hover { background: var(--accent); color: #000; }
+.bookmark { color: var(--primary); cursor: pointer; }
+footer { text-align: center; padding: 2em 0 1em; color: var(--accent); }
+@media (max-width: 650px) {
+  main { padding: 0.6em; }
+  #results-table, #results-table th, #results-table td { font-size: 0.97em; }
+  header, nav { flex-direction: column; gap: 0.5em; }
+}
+#details-section {
+  position: fixed;
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 2em;
+  max-width: 95vw;
+  z-index: 9999;
+}
+#details-section h3 { margin-top: 0 }
+#details-section button { margin-top: 1em }
